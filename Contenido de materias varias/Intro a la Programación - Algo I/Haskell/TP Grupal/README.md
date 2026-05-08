@@ -1,6 +1,6 @@
 # TP-Haskell-1c24
 
-
+##*Link al [repo original](https://gitlab.com/intro-algo1/TP-Haskell-1c24) creado durante la cursada*
 
 ## Getting started
 
