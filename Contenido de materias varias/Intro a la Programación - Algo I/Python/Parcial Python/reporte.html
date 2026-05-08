@@ -1,0 +1,643 @@
+<h1>Parcial - tema2</h1>
+<p>Nota: 5.78 / 10.0 (DESAPROBADO)</p>
+<pre><code>puntaje ej1: 0.28
+puntaje ej2: 1.5
+puntaje ej3: 0.75
+puntaje ej4: 2.25
+puntaje ej5: 1
+</code></pre>
+<h2>Datos del alumno</h2>
+<p>Nombre: Federico Golomb</p>
+<p>DNI: 43034860</p>
+<p>LU: 989/22</p>
+<p>Maquina: 25-08</p>
+<h2>Enunciado</h2>
+<!doctype html>
+<html>
+<head>
+  <link rel="icon" href="data:,">
+  <link href="css/style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <style>
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .conditions {
+        margin-left: 20px;
+    }
+</style>
+</head>
+
+<body style="width: 50%;margin: 1% auto;">
+
+<div> 
+<h1> Parcial Python - Tema 2 </h1>
+
+<h2> Importante </h2>
+
+<ul>
+  <li>El parcial se aprueba con 6 puntos</li>
+  <li>Template de funciones a implementar <a href="#" onclick="forceDownload('/parcial/Template_t2.py','Template_t2.py');">acá</a><br></li>
+  <li>Lista de funciones permitidas <a href="/static/python_permitidas.html">acá</a></li>
+  <li>Para testear el código pueden usar <a href="#" onclick="forceDownload('/parcial/tema2-test.py', 'tema2-test.py')">este</a> archivo que ya cuenta con todo lo necesario para desarrollar sus propios tests (este archivo no se entrega)</li>
+</ul>
+
+Implementar las siguientes especificaciones en Python.
+
+<form name="form1" action="/submit_examen" method="post" enctype="multipart/form-data" onsubmit="return validaciones(event)">
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">1) Ejercicio 1 [2.25 puntos]</h3>
+
+<p> problema multiplos_de_primos (in <i>v</i>: seq⟨Z⟩) : Diccionario⟨Z, Z⟩ {<br>
+  &nbsp; <strong>requiere:</strong> { Los elementos de <i>v</i> son positivos }<br>
+
+  &nbsp; <strong>asegura:</strong> { Las claves de <i>res</i> son números primos, y cada valor corresponde con la cantidad de números en <i>v</i> tales que ese primo lo divide }<br>
+  &nbsp; <strong>asegura:</strong> { Si existe un número primo p tal que divide a algún número de <i>v</i>, entonces p es clave de <i>res</i> }<br>
+  &nbsp; <strong>asegura:</strong> { Los valores de <i>res</i> son positivos }<br>
+}<br>
+</p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">2) Ejercicio 2 [2.25 puntos] </h3>
+
+<p> problema longitud_mas_grande (in <i>A</i>: seq⟨seq⟨Z⟩⟩) : Z {<br>
+  &nbsp; <strong>requiere:</strong>{  Hay al menos un uno en <i>A</i>  }<br>
+  &nbsp; <strong>asegura:</strong> { Sea v la secuencia de unos más larga que está contenida en algún <i>A[i]</i> para i válido, res es igual a la longitud de v }<br>
+  }<br>
+</p>
+
+<p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">3) Ejercicio 3 [2.25 puntos]</h3>
+
+Implementar la especificación <i>resolver_cuentas</i> descrita a continuación.
+
+<p> problema resolver_cuentas(in <i>p</i>: Pila⟨string⟩ ) : seq⟨Z⟩ {<br>
+  &nbsp; <strong>requiere:</strong> { Para cada elemento x de <i>p</i> vale esta_bien_formado(x) }<br>
+  &nbsp; <strong>asegura:</strong> { <i>res[i]</i> es igual al resultado de la operación aritmética representada por el tope de la pila <i>p</i> luego de haber desapilado i elementos, para 0 <= i < longitud de <i>p</i> }<br>
+  &nbsp; <strong>asegura:</strong> { <i>res</i> tiene la misma cantidad de elementos que <i>p</i> }<br>
+  }<br>
+  </p>
+
+<p> problema esta_bien_formado(in <i>s</i>: string) : Bool {<br>
+  &nbsp; <strong>requiere:</strong> { - }<br>
+  &nbsp; <strong>asegura:</strong> { res == True <==> Cada caracter de s es '+', '-' o es un dígito; el último caracter de <i>s</i> es un dígito; no hay dos operadores consecutivos en <i>s</i> (los operadores son '+' y '-') }<br>
+  }<br>
+</p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">4) Ejercicio 4 [2.25 puntos]</h3>
+
+<p> problema dame_el_que_falta (in <i>s</i>: seq⟨ZxZ⟩): ZxZ {<br>
+  &nbsp; <strong>requiere:</strong> { El menor número que aparece en alguna tupla de <i>s</i> es igual a 1 }<br>
+  &nbsp; <strong>requiere:</strong> { Sea n el máximo número que aparece en alguna tupla de <i>s</i>, |s| = n*n-1 }<br>
+  &nbsp; <strong>requiere:</strong> { <i>s</i> no tiene tuplas repetidas }<br>
+  &nbsp; <strong>asegura:</strong> { Las compontentes de <i>res</i> son valores entre 1 y n, inclusive }<br>
+  &nbsp; <strong>asegura:</strong> { <i>res</i> no pertenece a <i>s</i> }<br>
+  }<br>
+  </p>
+
+<hr style="width: 100%;">
+  <h3 style="color:#1A5276">5) Pregunta teórica (1 punto)</h3>
+
+  <p>Conteste marcando la opción correcta.</p>
+
+      <h4 style="color:#1A5276">En el contexto de Testing de Caja Blanca ¿Qué diferencia hay entre cubrimiento de arcos y cubrimiento de decisiones o ramas? </h4>
+
+     <p>
+      <input type="radio" name="mchoice_1" id="Bopcion1" value="1" />
+          <label for="Bopcion1">No hay diferencia, ambos se refieren al mismo concepto</label> <br>
+      <input type="radio" name="mchoice_1" id="Bopcion2" value="2" />
+          <label for="Bopcion2">El cubrimiento de arcos verifica las instrucciones del programa, mientras que cubrimiento de ramas verifica cada arco del Grafo de Control de Flujo (CGF) del programa</label> <br>
+      <input type="radio" name="mchoice_1" id="Bopcion3" value="3" />
+          <label for="Bopcion3">El cubrimiento de arcos verifica los arcos del Grafo de Control de Flujo (CFG), mientras que cubrimiento de ramas verifica cada arco True o False de cada decisión lógica del programa</label> <br>
+      </p>
+
+  <hr style="width: 100%;">
+  <h3 style="color:#1A5276">Adjunta el archivo con tu solución:</h3>
+  <p><b style="color:red">Solo se puede adjuntar 1 archivo de extensión .py. En caso de haber desarrollado tests propios, no deben ser entregados.</b></p>
+
+  <label for="archivo">Seleccionar archivo a enviar:</label>
+  <input type="file" id="archivo" name="archivo" required accept=".py,text/x-python"/>
+
+  <input type="submit" value="Enviar"
+        style= "background-color: #1A5276; border-radius: 5px;
+                margin-top:10px;padding: 10px 150px;color: #FFFFFF;
+                font-size: 20px;cursor: pointer; width:100%" >
+
+</form>
+</div>
+<script>
+  function validaciones(event) {
+    // Obtiene todos los inputs tipo radio del formulario
+      const radioGroups = document.querySelectorAll('input[type="radio"]');
+      const groupedByName = {};
+
+      // Agrupar radios por su atributo name
+      radioGroups.forEach(radio => {
+        if (!groupedByName[radio.name]) {
+          groupedByName[radio.name] = [];
+        }
+        groupedByName[radio.name].push(radio);
+      });
+
+      // Verificar que cada grupo de radios tenga al menos uno seleccionado
+      for (const groupName in groupedByName) {
+        const radios = groupedByName[groupName];
+        const isChecked = radios.some(radio => radio.checked);
+
+        if (!isChecked) {
+          alert(`Debes seleccionar una opción para la pregunta ${groupName}`);
+          return false; // Detener la validación si falta alguna opción
+        }
+      }
+
+      var confirmacion = confirm("Confirmo que revisé mis respuestas y que quiero entregar mi examen");
+      if (!confirmacion) {
+          event.preventDefault();
+          event.returnValue = false;
+          return false;
+        }
+        event.returnValue = true;
+        return true;
+    }
+
+// registro una funcion para mostrar el archivo cuando se adjunta.
+// de esa forma evitamos que se adjunten otros archivos por error
+document
+  .getElementById('archivo')
+  .addEventListener(
+      'change',
+      function () {
+          var fr = new FileReader();
+          fr.onload = function () {
+              alert(this.result);
+          };
+          fr.readAsText(this.files[0]);
+      }
+  );
+
+// para forzar a bajar el template de pytest y que no se pueda abrir en un nuevo tab
+// (el browser intenta mostrar el codigo como HTML y el formato se ve raro)
+function forceDownload(url, filename) {
+  fetch(url).then(function(t) {
+    return t.blob().then((b) => {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(b);
+      a.setAttribute("download", filename);
+      a.click();
+    });
+  });
+}
+</script>
+</body>
+
+</html>
+
+<h2>Solucion entregada por el alumno</h2>
+<pre><code>from queue import Queue as Cola
+from queue import LifoQueue as Pila
+
+# Ejercicio 1
+def multiplos_de_primos(v: list[int]) -&gt; dict[int,int]:
+    res: dict[int, int] = dict()
+    divisores_primos: list[int] = list()
+
+    for value in v:
+        for n in range(1,value):
+            if (value%n == 0 and
+                es_primo(n) and
+                not pertenece(n, divisores_primos)):
+
+                divisores_primos.append(n)
+
+    res = {p: 0 for p in divisores_primos}
+
+    for p in divisores_primos:
+        count: int = 0
+        for value in v:
+            if value%p == 0: count+=1
+        res[p] = count
+    res.pop(1)
+
+    return res
+
+def pertenece(value:any, lista:list[any]) -&gt; bool:
+    for elem in lista:
+        if elem == value:
+            return True
+    return False
+
+def es_primo(num: int) -&gt; bool:
+    divisores: list[int] = []
+    for n in range(1,num+1):
+        if num%n == 0:
+            divisores.append(n)
+    return len(divisores)&lt;=2
+
+
+# Ejercicio 2
+def longitud_mas_grande(A: list[list[int]]) -&gt; int:
+
+    sqs: list[list[int]] = list()
+
+    for sec in A:
+        sec_temp: list[int] = list()
+        for num in sec:
+            if num == 1: 
+                sec_temp.append(num)
+            else:
+                if sec_temp: sqs.append(sec_temp)
+                sec_temp = []
+
+    res: int = len(sqs[0])
+    for sec in sqs:
+        if len(sec)&gt;res:
+            res = len(sec)
+
+    return res
+
+# Ejercicio 3
+def resolver_cuentas(A: Pila[str]) -&gt; list[int]:
+
+    cuentas: list[str] = list()
+    while not A.empty():
+        cuenta: str = A.get()
+        cuentas.append(cuenta)
+
+    for i in range(len(cuentas)-1, 0, -1):
+        A.put(i)
+
+    res: list[int] = list()
+    for cuenta in cuentas:
+
+        suma_temp: int = 0
+        if not pertenece(cuenta[0], '+-'):
+            suma_temp = int(cuenta[0])
+        elif pertenece(cuenta[0], '+-'):
+            suma_temp = int(cuenta[1])
+
+        for i in range(1,len(cuenta)-1):
+            if cuenta[i]=='+':
+                suma_temp += int(cuenta[i+1])
+            elif cuenta[i]=='-':
+                suma_temp -= int(cuenta[i+1])
+
+        res.append(suma_temp)
+
+    return res
+
+def esta_bien_formado(s: str) -&gt; bool:
+    char_permitidos: str = '+-0123456789'
+
+    aux: list[str] = [char for char in s]
+    ultimo = aux.pop()
+    aux.append(ultimo)
+
+    if pertenece(ultimo, '+-'):
+        return False
+
+    for i in range(1,len(aux)):
+        if not pertenece(aux[0], char_permitidos):
+            return False
+        elif not pertenece(aux[i], char_permitidos):
+            return False
+        elif pertenece(aux[i], '+-') and pertenece(aux[i-1], '+-'):
+            return False
+
+    return True
+
+# Ejercicio 4
+def dame_el_que_falta(s: list[tuple[int,int]]) -&gt; tuple[int,int]:
+
+    n: int = s[0][0]
+    for t in s:
+        for num in t:
+            if num&gt;n: n = num
+
+    for i in range(1,n+1):
+        for j in range(1,n+1):
+            if not pertenece((i,j),s): 
+                return (i,j)
+
+</code></pre>
+<h2>Resultado de la compilacion</h2>
+<pre><code>
+</code></pre>
+<h2>Ejecucion de los tests</h2>
+<h3>tema2-test-ej1.py.compilacion.out</h3>
+<p>Puntaje del ej: 0.28 / 2.25</p>
+<pre><code>test_ej1_cero_elementos (__main__.Ej1Test.test_ej1_cero_elementos) ... ERROR
+test_ej1_dos_elementos (__main__.Ej1Test.test_ej1_dos_elementos) ... FAIL
+test_ej1_elementos_con_factores_repetidos (__main__.Ej1Test.test_ej1_elementos_con_factores_repetidos) ... FAIL
+test_ej1_elementos_con_varios_factores_repetidos (__main__.Ej1Test.test_ej1_elementos_con_varios_factores_repetidos) ... ok
+test_ej1_lista_con_un_uno (__main__.Ej1Test.test_ej1_lista_con_un_uno) ... ERROR
+test_ej1_muchisimos_numeros (__main__.Ej1Test.test_ej1_muchisimos_numeros) ... FAIL
+test_ej1_muchos_numeros (__main__.Ej1Test.test_ej1_muchos_numeros) ... FAIL
+test_ej1_un_elemento (__main__.Ej1Test.test_ej1_un_elemento) ... FAIL
+
+======================================================================
+ERROR: test_ej1_cero_elementos (__main__.Ej1Test.test_ej1_cero_elementos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej1.py&quot;, line 23, in test_ej1_cero_elementos
+    self.assertDictEqual(salida, multiplos_de_primos(entrada))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/solucion.py&quot;, line 24, in multiplos_de_primos
+    res.pop(1)
+KeyError: 1
+
+======================================================================
+ERROR: test_ej1_lista_con_un_uno (__main__.Ej1Test.test_ej1_lista_con_un_uno)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej1.py&quot;, line 67, in test_ej1_lista_con_un_uno
+    self.assertDictEqual(salida, multiplos_de_primos(entrada))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/solucion.py&quot;, line 24, in multiplos_de_primos
+    res.pop(1)
+KeyError: 1
+
+======================================================================
+FAIL: test_ej1_dos_elementos (__main__.Ej1Test.test_ej1_dos_elementos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej1.py&quot;, line 33, in test_ej1_dos_elementos
+    self.assertDictEqual(salida, multiplos_de_primos(entrada))
+AssertionError: {2: 1, 3: 1} != {}
+- {2: 1, 3: 1}
++ {}
+
+======================================================================
+FAIL: test_ej1_elementos_con_factores_repetidos (__main__.Ej1Test.test_ej1_elementos_con_factores_repetidos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej1.py&quot;, line 38, in test_ej1_elementos_con_factores_repetidos
+    self.assertDictEqual(salida, multiplos_de_primos(entrada))
+AssertionError: {5: 1, 7: 2} != {7: 2}
+- {5: 1, 7: 2}
++ {7: 2}
+
+======================================================================
+FAIL: test_ej1_muchisimos_numeros (__main__.Ej1Test.test_ej1_muchisimos_numeros)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej1.py&quot;, line 62, in test_ej1_muchisimos_numeros
+    self.assertDictEqual(salida, multiplos_de_primos(entrada))
+AssertionError: {2: 5[94 chars]47: 2, 53: 1, 59: 1, 61: 1, 67: 1, 71: 1, 73: [25 chars]7: 1} != {2: 5[94 chars]47: 2}
+  {2: 50,
+   3: 33,
+   5: 20,
+   7: 14,
+   11: 9,
+   13: 7,
+   17: 5,
+   19: 5,
+   23: 4,
+   29: 3,
+   31: 3,
+   37: 2,
+   41: 2,
+   43: 2,
+-  47: 2,
+?       ^
+
++  47: 2}
+?       ^
+
+-  53: 1,
+-  59: 1,
+-  61: 1,
+-  67: 1,
+-  71: 1,
+-  73: 1,
+-  79: 1,
+-  83: 1,
+-  89: 1,
+-  97: 1}
+
+======================================================================
+FAIL: test_ej1_muchos_numeros (__main__.Ej1Test.test_ej1_muchos_numeros)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej1.py&quot;, line 48, in test_ej1_muchos_numeros
+    self.assertDictEqual(salida, multiplos_de_primos(entrada))
+AssertionError: {2: 5, 3: 3, 5: 2, 7: 1} != {2: 5, 3: 3, 5: 2}
+- {2: 5, 3: 3, 5: 2, 7: 1}
+?                  ------
+
++ {2: 5, 3: 3, 5: 2}
+
+======================================================================
+FAIL: test_ej1_un_elemento (__main__.Ej1Test.test_ej1_un_elemento)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej1.py&quot;, line 28, in test_ej1_un_elemento
+    self.assertDictEqual(salida, multiplos_de_primos(entrada))
+AssertionError: {5: 1} != {}
+- {5: 1}
++ {}
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.007s
+
+FAILED (failures=5, errors=2)
+
+</code></pre>
+<h3>tema2-test-ej2.py.compilacion.out</h3>
+<p>Puntaje del ej: 1.5 / 2.25</p>
+<pre><code>test_ej2_muchas_listas (__main__.Ej1Test.test_ej2_muchas_listas) ... ok
+test_ej2_una_lista_un_uno (__main__.Ej1Test.test_ej2_una_lista_un_uno) ... ERROR
+test_ej2_una_lista_varias_secuencias_de_unos (__main__.Ej1Test.test_ej2_una_lista_varias_secuencias_de_unos) ... ok
+test_ej2_una_lista_varios_unos (__main__.Ej1Test.test_ej2_una_lista_varios_unos) ... ok
+test_ej2_varias_listas_max_al_final (__main__.Ej1Test.test_ej2_varias_listas_max_al_final) ... ERROR
+test_ej2_varias_listas_max_al_principio (__main__.Ej1Test.test_ej2_varias_listas_max_al_principio) ... ok
+
+======================================================================
+ERROR: test_ej2_una_lista_un_uno (__main__.Ej1Test.test_ej2_una_lista_un_uno)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej2.py&quot;, line 23, in test_ej2_una_lista_un_uno
+    self.assertEqual(salida, longitud_mas_grande(entrada))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/solucion.py&quot;, line 56, in longitud_mas_grande
+    res: int = len(sqs[0])
+                   ~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_ej2_varias_listas_max_al_final (__main__.Ej1Test.test_ej2_varias_listas_max_al_final)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej2.py&quot;, line 43, in test_ej2_varias_listas_max_al_final
+    self.assertEqual(salida, longitud_mas_grande(entrada))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/solucion.py&quot;, line 56, in longitud_mas_grande
+    res: int = len(sqs[0])
+                   ~~~^^^
+IndexError: list index out of range
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+FAILED (errors=2)
+
+</code></pre>
+<h3>tema2-test-ej3.py.compilacion.out</h3>
+<p>Puntaje del ej: 0.75 / 2.25</p>
+<pre><code>test_ej3_cuentas_que_empiezan_con_mas (__main__.Ej1Test.test_ej3_cuentas_que_empiezan_con_mas) ... FAIL
+test_ej3_cuentas_que_empiezan_con_menos (__main__.Ej1Test.test_ej3_cuentas_que_empiezan_con_menos) ... FAIL
+test_ej3_dos_cuentas_preserva_pila (__main__.Ej1Test.test_ej3_dos_cuentas_preserva_pila) ... FAIL
+test_ej3_pila_vacia (__main__.Ej1Test.test_ej3_pila_vacia) ... ok
+test_ej3_una_cuenta (__main__.Ej1Test.test_ej3_una_cuenta) ... ok
+test_ej3_varias_cuentas (__main__.Ej1Test.test_ej3_varias_cuentas) ... FAIL
+
+======================================================================
+FAIL: test_ej3_cuentas_que_empiezan_con_mas (__main__.Ej1Test.test_ej3_cuentas_que_empiezan_con_mas)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej3.py&quot;, line 53, in test_ej3_cuentas_que_empiezan_con_mas
+    self.assertEqual(entrada.queue, entrada_copia.queue)
+AssertionError: Lists differ: [2, 1] != ['+2-4', '+7-5-2', '+1+6']
+
+First differing element 0:
+2
+'+2-4'
+
+Second list contains 1 additional elements.
+First extra element 2:
+'+1+6'
+
+- [2, 1]
++ ['+2-4', '+7-5-2', '+1+6']
+
+======================================================================
+FAIL: test_ej3_cuentas_que_empiezan_con_menos (__main__.Ej1Test.test_ej3_cuentas_que_empiezan_con_menos)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej3.py&quot;, line 46, in test_ej3_cuentas_que_empiezan_con_menos
+    self.assertListEqual(salida, resolver_cuentas(entrada))
+AssertionError: Lists differ: [-7, 0, 2] != [-5, 14, 6]
+
+First differing element 0:
+-7
+-5
+
+- [-7, 0, 2]
++ [-5, 14, 6]
+
+======================================================================
+FAIL: test_ej3_dos_cuentas_preserva_pila (__main__.Ej1Test.test_ej3_dos_cuentas_preserva_pila)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej3.py&quot;, line 36, in test_ej3_dos_cuentas_preserva_pila
+    self.assertEqual(entrada.queue, entrada_copia.queue)
+AssertionError: Lists differ: [1] != ['2+4', '7+5']
+
+First differing element 0:
+1
+'2+4'
+
+Second list contains 1 additional elements.
+First extra element 1:
+'7+5'
+
+- [1]
++ ['2+4', '7+5']
+
+======================================================================
+FAIL: test_ej3_varias_cuentas (__main__.Ej1Test.test_ej3_varias_cuentas)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;./venv/lib/python3.12/site-packages/timeout_decorator/timeout_decorator.py&quot;, line 82, in new_function
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;./correcciones/python-tn/golomb_federico_43034860/tema2-test-ej3.py&quot;, line 41, in test_ej3_varias_cuentas
+    self.assertListEqual(salida, resolver_cuentas(entrada))
+AssertionError: Lists differ: [0, 46, 6, -5, 12, 6] != [0, 0, 6, -5, 12, 6]
+
+First differing element 1:
+46
+0
+
+- [0, 46, 6, -5, 12, 6]
+?     ^  ---
+
++ [0, 0, 6, -5, 12, 6]
+?     ^^^
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+FAILED (failures=4)
+
+</code></pre>
+<h3>tema2-test-ej4.py.compilacion.out</h3>
+<p>Puntaje del ej: 2.25 / 2.25</p>
+<pre><code>test_ej4_falta_el_mas_chico (__main__.Ej1Test.test_ej4_falta_el_mas_chico) ... ok
+test_ej4_falta_el_mas_grande (__main__.Ej1Test.test_ej4_falta_el_mas_grande) ... ok
+test_ej4_lista_mas_larga (__main__.Ej1Test.test_ej4_lista_mas_larga) ... ok
+test_ej4_lista_simple (__main__.Ej1Test.test_ej4_lista_simple) ... ok
+test_ej4_test_grande_desordenado (__main__.Ej1Test.test_ej4_test_grande_desordenado) ... ok
+test_ej4_test_grande_ordenado (__main__.Ej1Test.test_ej4_test_grande_ordenado) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK
+
+</code></pre>
+<h3>mchoice.json-ej5.compilacion.out</h3>
+<p>Puntaje del ej: 1 / 1</p>
+<pre><code>mchoice ej5: respuesta del alumno=3, respuesta correcta=3
+
+Ran 1 test in 0 seconds
+
+OK
+
+</code></pre>
+<p>FIN</p>
